@@ -28,12 +28,12 @@ namespace Trahvid.Controllers
 
             return View();
         }
-       
+
         public ActionResult Traahv()
         {
-
-            IEnumerable<Traahv> traahvs = (IEnumerable<Traahv>)db.Traahv1;
-            return View();
+            IEnumerable<Traahv> traahvs = db.Traahv1.ToList(); // Fetch the data from the database
+            return View(traahvs); // Pass the data to the view
         }
+
     }
 }
