@@ -32,7 +32,7 @@ namespace Trahvid.Controllers
         public ActionResult Traahv()
         {
 
-            IEnumerable<Traahv> traahvs = (IEnumerable<Traahv>)db.Traahv;
+            IEnumerable<Traahv> traahvs = (IEnumerable<Traahv>)db.Traahv1;
             return View();
         }
     }

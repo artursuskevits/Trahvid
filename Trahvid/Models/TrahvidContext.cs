@@ -8,7 +8,7 @@ namespace Trahvid.Models
 {
     public class TrahvidContext : DbContext
     {
-        public DbSet<Traahv> Traahv { get; set; }
+        public DbSet<Traahv> Traahv1 { get; set; }
         public DbSet<Login>  Login1 { get; set; }
     }
 }
