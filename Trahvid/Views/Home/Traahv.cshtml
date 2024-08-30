@@ -1,81 +1,63 @@
-﻿﻿@model IEnumerable<Trahvid.Models.Traahv>
+﻿@model IEnumerable<Trahvid.Models.Traahv>
 
 @{
-    ViewBag.Title = "Sünnipäevad";
+    ViewBag.Title = "Traahv";
 }
-<style>
-    /* Style for the table */
-    .table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
 
-        /* Style for table header */
-        .table th {
-            background-color: #3498db;
-            color: #fff;
-            padding: 10px;
-            text-align: left;
-        }
-
-        /* Style for table rows */
-        .table td, .table th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        /* Style for alternating rows */
-        .table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        /* Style for links in the last column */
-        .table td a {
-            color: #3498db;
-            margin-right: 10px;
-            text-decoration: none;
-        }
-
-            /* Hover effect for links */
-            .table td a:hover {
-                text-decoration: underline;
-                color: #2980b9;
-            }
-</style>
-<h2>Piduvad</h2>
+<h2>Traahv</h2>
 
 <p>
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            Pidu Nimetus
+            @Html.DisplayNameFor(model => model.SoidukeNumber)
         </th>
         <th>
-            Pidu kuupäev
+            @Html.DisplayNameFor(model => model.OmanikuNimi)
         </th>
         <th>
-            Märkused
+            @Html.DisplayNameFor(model => model.OmanikuEpost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rikkumisekuupaev)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KiiruseUletamine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrahviSuurus)
         </th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nimetus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Notes)
-            </td>
-            <td>
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoidukeNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OmanikuNimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OmanikuEpost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rikkumisekuupaev)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KiiruseUletamine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrahviSuurus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
 
 </table>
