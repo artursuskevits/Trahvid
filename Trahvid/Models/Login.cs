@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
+
+namespace Trahvid.Models
+{
+    public class Login
+    {
+        public int Id { get; set; }
+        public string KasutajaNimi { get; set; }
+        public string Salasona { get; set; }
+
+        public Double Role { get; set; }
+
+        [ForeignKey("Traahv")]
+        public int Soidukenumber { get; set; }
+        public virtual Traahv Traahv { get; set; }
+    }
+}
