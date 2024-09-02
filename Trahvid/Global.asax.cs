@@ -14,7 +14,7 @@ namespace Trahvid
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new TrahvidDbInitalizer());
+            Database.SetInitializer(new TrahvidDbInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

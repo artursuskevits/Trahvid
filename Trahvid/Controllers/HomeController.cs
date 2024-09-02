@@ -31,9 +31,28 @@ namespace Trahvid.Controllers
 
         public ActionResult Traahv()
         {
-            IEnumerable<Traahv> traahvs = db.Traahv1.ToList(); // Fetch the data from the database
-            return View(traahvs); // Pass the data to the view
+            IEnumerable<Traahv> traahvs = db.Traahv1.ToList();
+            return View(traahvs);
         }
+        public ActionResult CreateTraahv()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Traahv trahv)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Traahv1.Add(trahv);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(trahv);
+        }
+
 
     }
 }
